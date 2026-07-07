@@ -28,7 +28,7 @@ The leading idea is the **comprehension gate**: you only merge after you pass. T
 
 ## It's working if
 
-- You get a briefing before the first question, including how the change interacts with code the diff doesn't show.
+- You get a briefing before the first question, drawn from the commit messages and surrounding code as well as the diff — including how the change interacts with code the diff doesn't show, and any deviations a `/implement` run recorded in the commit message.
 - Questions arrive one at a time, about consequences rather than trivia.
 - A wrong answer gets corrected *and* revisited later — not waved through.
 - The session ends with an explicit pass (or a list of what to re-read), not a shrug.

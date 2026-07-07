@@ -11,4 +11,4 @@ The user is about to work in territory they don't know well. Your job is to find
 
 3. **Report the blindspots.** A short list, ordered by how much each would change the user's plan. For each: what it is, why it matters to *this* task, and the question the user should now be asking. Explain them for someone new to this territory — the report is teaching material, not a task list. Also say what "good" looks like here if the user has no way to judge that yet.
 
-4. **Hand off, don't proceed.** Close by pointing at the next step — usually `/grill-me` or `/grill-with-docs` (not raw `/grilling`, which has no persistence) now that the user knows what to ask, and answer any follow-up questions they have about the territory first.
+4. **Hand off, don't proceed.** Close by pointing at the next step — usually `/grill-me` or `/grill-with-docs`, the user-invoked entries that wrap the `/grilling` primitive, now that the user knows what to ask, and answer any follow-up questions they have about the territory first.

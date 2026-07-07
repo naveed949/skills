@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 Quiz me on a change until I understand it well enough to own it. A diff alone gives me a light understanding — much of the behaviour lives in existing code paths the diff merely touches — so your job is to close that gap and then verify it's closed.
 
-1. **Gather the change.** Read the diff the user points you at (or the diff of the current branch against its base), plus the surrounding code paths it depends on. Understand behaviour, not just text.
+1. **Gather the change.** Read the diff the user points you at (or the diff of the current branch against its base), plus the commit messages / PR description across that range and the surrounding code paths it depends on. The commit messages are where a `/implement` run records its deviations from the plan, so they carry context the diff itself doesn't. Understand behaviour, not just text.
 
 2. **Brief me first.** Write a short report: the context, the intuition behind the approach, what was done, and what now behaves differently. Include how the change interacts with existing code paths — that's the part the diff doesn't show.
 

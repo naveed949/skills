@@ -31,7 +31,7 @@ Look for the originating spec, in this order:
 3. A PRD/spec file under `docs/`, `specs/`, or `.scratch/` matching the branch name or feature.
 4. If nothing is found, ask the user where the spec is. If they say there isn't one, the **Spec** sub-agent will skip and report "no spec available".
 
-If the caller hands you a deviations log (e.g. `/implement`'s `implementation-notes.md`), fold it into the spec context — the Spec sub-agent needs it to judge each deviation against the spec.
+If the caller hands you a deviations log (e.g. `/implement`'s `.claude/implementation-notes.md`), fold it into the spec context — the Spec sub-agent needs it to judge each deviation against the spec. A supplied deviations log is judged even when no spec is found: it always runs the Spec sub-agent (see step 4).
 
 ### 3. Identify the standards sources
 
@@ -72,9 +72,9 @@ Send a single message with two `Agent` tool calls. Use the `general-purpose` sub
 - The diff command and commit list.
 - The path or fetched contents of the spec.
 - The deviations log, if one was handed to you in step 2 — pasted in full.
-- The brief: "Report: (a) requirements the spec asked for that are missing or partial; (b) behaviour in the diff that wasn't asked for (scope creep); (c) requirements that look implemented but where the implementation looks wrong; (d) for each entry in the deviations log (if supplied), whether the deviation was the right call against the spec. Quote the spec line for each finding. Under 400 words."
+- The brief: "Report: (a) requirements the spec asked for that are missing or partial; (b) behaviour in the diff that wasn't asked for (scope creep); (c) requirements that look implemented but where the implementation looks wrong; (d) for each entry in the deviations log (if supplied), whether the deviation was the right call against the spec. Quote the spec line for each finding in (a)–(c); for a (d) finding, quote the nearest relevant spec passage, or state that the spec doesn't cover the case — deviations often address what the spec never anticipated. Under 500 words."
 
-If the spec is missing, skip the Spec sub-agent and note this in the final report.
+If the spec is missing and no deviations log was supplied, skip the Spec sub-agent and note this in the final report. If a deviations log was supplied, run the Spec sub-agent even with no spec — it still judges each logged deviation against the surrounding code and general soundness, and reports "no spec available" for parts (a)–(c).
 
 ### 5. Aggregate
 
