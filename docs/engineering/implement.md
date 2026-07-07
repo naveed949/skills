@@ -28,6 +28,10 @@ The idea `implement` runs on is the **seam** — the stable interface a feature 
 
 Around that core it keeps the loop tight — typecheck often, run single test files as it goes, run the whole suite once at the end — then closes out with a review pass and a commit to the current branch.
 
+## The deviations log
+
+No plan survives contact with the codebase, so `implement` keeps a temporary `implementation-notes.md` while it works. When an edge case or a wrong assumption forces it off the plan, it picks the conservative option, logs the **deviation** — what it found, what it did instead, why — and keeps going instead of stopping to ask. The log then feeds the [code-review](https://aihero.dev/skills-code-review) Spec pass, where each deviation is judged against the PRD, and the deviations are surfaced to you in the final summary. The file itself is deleted before the commit; the record of what changed lives in the review and the summary, not in your repo.
+
 ## Where it fits
 
 `implement` is the build step near the end of the main chain, just before the review:

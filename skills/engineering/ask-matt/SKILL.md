@@ -23,7 +23,9 @@ The route most work travels. You have an idea and want it built.
    - **Yes** → **`/to-prd`** (turn the thread into a PRD) → **`/to-issues`** (split the PRD into independently-grabbable issues). Because the issues are independent, **clear context between each one**: start a fresh session per issue and kick off **`/implement`** by passing it the PRD and the single issue to work on.
    - **No** → **`/implement`** right here, in the same context window.
 
-   Either way, **`/implement`** builds each issue by driving **`/tdd`** internally — one red-green slice at a time — then closes out by running **`/code-review`**, a two-axis review (Standards + Spec) of the diff, before committing. Reach for **`/tdd`** on its own when you just want to build a concrete behaviour test-first without a full spec, and **`/code-review`** on its own whenever you want to review a branch or PR against a fixed point.
+   Either way, **`/implement`** builds each issue by driving **`/tdd`** internally — one red-green slice at a time — logging any deviations from the plan as it goes, then closes out by running **`/code-review`**, a two-axis review (Standards + Spec) of the diff, before committing. Reach for **`/tdd`** on its own when you just want to build a concrete behaviour test-first without a full spec, and **`/code-review`** on its own whenever you want to review a branch or PR against a fixed point.
+
+4. **Branch — did you watch the build closely?** If an agent did more than you followed — a long `/implement` session, a big diff over existing code paths — run **`/quiz-me`** before merging. It briefs you on the change, then quizzes you one question at a time; you merge when you pass. The review checked the code; this checks *you*.
 
 ### Context hygiene
 
@@ -34,6 +36,8 @@ The limit on this is the **[smart zone](https://www.aihero.dev/ai-coding-diction
 ## On-ramps
 
 A starting situation that generates work, then merges onto the main flow.
+
+- **Unfamiliar territory** → **`/blindspot`**. When you're heading into a part of the codebase or a domain you don't know — and you don't yet know what questions to ask — run a blindspot pass first. It sweeps the territory and hands back your **unknown unknowns** as askable questions, which is exactly the raw material step 1's grilling needs. Grilling can only surface the unknowns you know you have; `/blindspot` finds the rest.
 
 - **Bugs and requests piling up** → **`/triage`**. It moves issues through triage roles and produces agent-ready issues, which **`/implement`** later picks up.
 
@@ -66,6 +70,7 @@ Off the main flow entirely.
 - **`/grill-me`** — the same relentless interview as `/grill-with-docs`, but for when you have **no codebase**. Stateless: it saves nothing locally, builds no `CONTEXT.md`. Reach for it to sharpen any plan or design that doesn't live in a repo.
 - **`/prototype`** — a small, throwaway program that answers one design question: does this state model feel right, or what should this UI look like. Throwaway from day one — keep the answer, delete the code. It's the detour in step 2 of the main flow, but reach for it any time a design question is hard to settle on paper.
 - **`/research`** — delegate reading legwork to a **background agent**: it investigates a question against **primary sources**, then leaves a cited Markdown file in the repo. Keep working while it reads. The file it produces is something to take *into* the main flow at `/grill-with-docs` — research feeds the thinking, it doesn't replace it.
+- **`/resolving-merge-conflicts`** — resolve an in-progress merge/rebase conflict by digging out the primary sources behind each side and preserving both intents. Reach for it when git is mid-conflict; it always resolves, never aborts.
 - **`/teach`** — learn a concept over multiple sessions, using the current directory as a stateful workspace.
 - **`/writing-great-skills`** — reference for writing and editing skills well.
 

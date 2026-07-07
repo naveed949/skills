@@ -31,7 +31,7 @@ Reach for it once a change has been talked through and the domain language is se
 - **Problem statement** — what is broken or missing, and why it's worth solving, in the project's own vocabulary.
 - **Solution** — the shape of the fix at a high level, before any implementation detail.
 - **User stories** — an extensive, numbered list of the concrete behaviours the change must support, each one independently checkable.
-- **Implementation decisions** — the choices already settled during the conversation, so they aren't relitigated later.
+- **Implementation decisions** — the choices already settled during the conversation, so they aren't relitigated later. Ordered volatile-first: data models, then interfaces and contracts, then anything user-facing, with mechanical refactoring last — so your review attention lands where a wrong call is most expensive.
 - **Testing decisions** — the seams the feature will be tested at, and what "done" looks like.
 - **Out-of-scope items** — what this change deliberately does *not* cover, to keep the ticket bounded.
 - **Further notes** — anything else worth carrying forward that doesn't fit the sections above.

@@ -26,6 +26,8 @@ Reach for it when a plan or design still has soft spots and you want them surfac
 
 The mental model is a **design tree**: every plan branches into decisions, and decisions depend on each other. `grilling` descends that tree one node at a time, so an early answer can reshape which questions come next. That is why the questions arrive singly and in dependency order — a firehose of parallel questions loses the structure that makes the interview converge on a shared understanding.
 
+Early on it also asks for a **reference** — existing code, a vendored library, or a product that already does this the way you want. A reference is the highest-bandwidth answer you can give: it settles whole branches of the tree at once, so the interview reads it and confirms what it resolves instead of walking those branches question by question.
+
 ## Pulled out on purpose
 
 `grilling` is the **single source of truth** for the interview technique, split out as a model-invoked **primitive** so every skill that needs an interview can reach it instead of reinventing one. [grill-me](https://aihero.dev/skills-grill-me) and [grill-with-docs](https://aihero.dev/skills-grill-with-docs) are its two user-invoked front doors, but [improve-codebase-architecture](https://aihero.dev/skills-improve-codebase-architecture) and [triage](https://aihero.dev/skills-triage) also lean on it to pressure-test their own decisions.
