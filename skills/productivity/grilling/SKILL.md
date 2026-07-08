@@ -9,4 +9,6 @@ Ask the questions one at a time, waiting for feedback on each question before co
 
 If a *fact* can be found by exploring the codebase, look it up rather than asking me. The *decisions*, though, are mine — put each one to me and wait for my answer.
 
+Early in the interview, ask whether a reference exists: code in this repo, a vendored library, or a product I can point at that already does this the way I want. A good reference settles whole branches of the tree at once — when I name one, go read it, then confirm with me which decisions it settles instead of asking them one by one.
+
 Do not enact the plan until I confirm we have reached a shared understanding.
